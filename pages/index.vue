@@ -7,9 +7,9 @@
     <div class="flex flex-col gap-8 justify-center px-4">
       <ReceiptCard v-for="receipt in receipts" :receipt="receipt" />
 
-      <span v-if="!receipts.length" class="text-gray-400 text-center">
+      <!-- <span v-if="!receipts.length" class="text-gray-400 text-center">
         No data to be displayed
-      </span>
+      </span> -->
     </div>
   </div>
 </template>
