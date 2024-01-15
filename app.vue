@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <ReceiptCard />
-  </div>
+  <NuxtPage />
 </template>
