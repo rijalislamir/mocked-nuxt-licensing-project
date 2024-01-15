@@ -10,9 +10,11 @@
       <span>{{ receipt.storeName }}</span>
       <span class="font-bold">${{ receipt.amount }}</span>
     </div>
-    <button class="ml-auto text-white bg-blue-600 py-1 px-6 rounded-lg text-sm">
-      Print
-    </button>
+    <a :href="receipt.pdfLink" class="ml-auto" target="_blank">
+      <button class="text-white bg-blue-600 py-1 px-6 rounded-lg text-sm">
+        Print
+      </button>
+    </a>
   </div>
 </template>
 

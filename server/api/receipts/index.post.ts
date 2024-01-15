@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
       storeName: "Store Name",
       currency: "USD",
       amount: 5025,
-      pdfLink: "http://",
+      pdfLink: "/receipt.pdf",
     },
   });
 });

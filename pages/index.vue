@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-lg mx-auto">
+  <div class="max-w-lg mx-auto pb-8">
     <div class="py-8">
       <img src="~/assets/img/logo.svg" alt="Logo" class="mx-auto" />
     </div>
