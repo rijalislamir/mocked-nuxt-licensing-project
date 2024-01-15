@@ -3,6 +3,14 @@ import prisma from "~/utils/database";
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, "id");
   const data = await readBody(event);
+
+  if (typeof data !== "object") {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "The request body should be in `application/json`",
+    });
+  }
+
   const { merchantId, terminalName, storeName, currency, amount } = data;
 
   if (!merchantId && !terminalName && !storeName && !currency && !amount) {
