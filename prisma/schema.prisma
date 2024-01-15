@@ -16,6 +16,7 @@ model Receipt {
   updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
   pdfLink String
   merchantId String
+  terminalName String
   storeName String
   amount BigInt
   currency String

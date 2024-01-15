@@ -5,9 +5,9 @@ export default defineEventHandler((event) => {
   const authMethod = ["POST", "PUT", "DELETE"];
   const req = event.node.req;
 
-  if (req.originalUrl === authRoute && authMethod.includes(req.method)) {
+  if (req.originalUrl === authRoute && authMethod.includes(req.method || "")) {
     try {
-      const token = event.node.req.headers.authorization.split(" ")[1];
+      const token = event.node.req.headers.authorization?.split(" ")[1] || "";
       const { jwtSecret } = useRuntimeConfig(event);
       jwt.verify(token, jwtSecret);
     } catch (error) {
