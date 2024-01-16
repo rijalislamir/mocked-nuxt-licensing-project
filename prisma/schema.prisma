@@ -14,10 +14,11 @@ model Receipt {
   id String @id @default(auto()) @map("_id") @db.ObjectId
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
-  pdfLink String
-  merchantId String
-  terminalName String
-  storeName String
-  amount BigInt
-  currency String
+  hash String
+  pdfLink String?
+  merchantId String?
+  terminalName String?
+  storeName String?
+  amount BigInt?
+  currency String?
 }

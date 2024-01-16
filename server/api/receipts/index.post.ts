@@ -10,24 +10,18 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  const { merchantId, terminalName, storeName, currency, amount } = body;
+  const { hash } = body;
 
-  if (!merchantId || !terminalName || !storeName || !currency || !amount) {
+  if (!hash) {
     throw createError({
       statusCode: 400,
-      statusMessage:
-        "`merchantId`, `terminalName`, `storeName`, `currency` and `amount` props are required in the request body",
+      statusMessage: "`hash` prop is required in the request body",
     });
   }
 
   return await prisma.receipt.create({
     data: {
-      merchantId,
-      terminalName,
-      storeName,
-      currency,
-      amount,
-      pdfLink: "/receipt.pdf",
+      ...body,
     },
   });
 });
